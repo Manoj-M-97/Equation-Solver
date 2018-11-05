@@ -1,2 +1,2 @@
 # Equation-Solver
-Web application to solve equation by extracting data from Images.
+Web application to solve simultaneous linear equations by extracting data from Images.
