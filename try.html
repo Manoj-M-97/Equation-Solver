@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Try parsing</title>
+<script type="text/javascript">
+	function send()
+	{
+		ip1=document.getElementById("ip1");
+		ip2=document.getElementById("ip2");
+		xhr=new XMLHttpRequest();
+		xhr.open("GET","try.php?ip1="+ip1.value +"& ip2="+ip2.value,true);
+		coeff1=[];
+		coeff2=[];
+		xhr.onreadystatechange=function ()
+		{
+			if(xhr.readyState==4 && xhr.status==200)
+			{
+				output=JSON.parse(xhr.responseText);
+				coeff2=output;
+				coeff1=coeff2.splice(0, 3);
+				alert(coeff1);
+				alert(coeff2);
+			}
+		};
+		xhr.send();
+	}
+</script>
+</head>
+<body>
+	<!--<form action="try.php" method="GET">-->
+		<input type="text" id="ip1" name="ip1">
+		<input type="text" id="ip2" name="ip2">
+		<input type="submit" name="submit" onclick="send()">
+	<!--</form>-->
+</body>
+</html>

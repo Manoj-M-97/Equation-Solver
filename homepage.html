@@ -8,64 +8,8 @@
 	<!--<script type="text/javascript" src="plot.js"></script>-->
 	<script src="equationSolver.js"></script>
 	<script type="text/javascript" src="ocrad.js"></script>
-
-	<script type="text/javascript">
-		function upload()
-		{
-			var xhr = new XMLHttpRequest();
-			xhr.onreadystatechange=function()
-			{
-				if(xhr.readyState==4 && xhr.status==200)
-				{
-					path=xhr.responseText;
-					//alert("Entered:"+path);
-					convert(path);
-				}
-			};
-			xhr.open("POST", "upload.php",true);
-			var formData = new FormData(); 
-			fl=document.getElementById('file');
-			fileName = fl.value.replace(/.*[\/\\]/, '');
-			formData.append("file",fl.files[0],fileName);
-			xhr.send(formData);
-		}
-
-		function check(e)
-		{
-			e.preventDefault();
-		}
-
-		function convert(path)
-		{
-			
-			//var image=document.getElementById("image");
-			//alert(image);
-			//image.crossOrigin = "Anonymous";
-			alert(path);
-			var testImage = new Image();
-        	testImage.src = path;
-        	var stringResult="";
-        	testImage.onload = function () {
-            stringResult = OCRAD(testImage);
-            alert(stringResult);
-
-        	/*for(i=0;i<stringResult.length;i++)
-        	{
-        		if(stringResult.charAt(i)==none)
-        		{
-        			alert("there it is");
-        		}
-        	}*/
-
-        	};
-			//path='uploads/img2.png';
-			/*image.src=path;
-			//image.display="none";
-			var output=OCRAD(image);
-			alert(output);
-			console.log(output);*/
-		}
-	</script>
+	<script src="parser.js"></script>
+	<script src="process.js"></script>
 	<!--<script type="text/javascript">
 		//import Tesseract from 'tesseract.js';
 		function recognize()
@@ -79,14 +23,15 @@
 		}
 	</script>-->
 </head>
+
 <body>
 	<div>
-		<label><input type="text" size="1" id="ax1"/> x1 </label>
-		<label><input type="text" size="1" id="ax2"/> x2 </label>
+		<label><input type="text" size="1" id="ax1"/> x </label>
+		<label><input type="text" size="1" id="ax2"/> y </label>
 		<label> = <input type="text" size="1" id="ax3"/></label>
 		<p>
-		<label><input type="text" size="1" id="bx1"/> x1 </label>
-		<label><input type="text" size="1" id="bx2"/> x2 </label>
+		<label><input type="text" size="1" id="bx1"/> x </label>
+		<label><input type="text" size="1" id="bx2"/> y </label>
 		<label> = <input type="text" size="1" id="bx3"/></label>
 		<p>
 		<input type="button" value="solve" id="solve" name="solve" onclick="obj.solver()"/>
@@ -94,7 +39,6 @@
 			<input type="file" id="file" name="file" accept="image/*">
 			<input type="button" value="Upload" id="submit" name="submit" onclick="upload()" onsubmit="check(this)">
 		</form>
-		<!--<input type="button" name="conv" onclick="convert()"/>-->
 	</div>
 	<div id="result">
 		

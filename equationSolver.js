@@ -16,7 +16,6 @@ obj={
 		obj.xhr.open("GET","http:homepage.php?ax1="+ax1+" & ax2="+ax2+" & ax3="+ax3+" & bx1="+bx1+" & bx2="+bx2+" & bx3="+bx3,true);
 		obj.xhr.send();
 		//draw(eq1);
-		
 	},
 
 	updateResponse:function()
@@ -25,6 +24,7 @@ obj={
 		{
 			res=obj.xhr.responseText;
 			res=JSON.parse(res);
+			//alert(res);
 			newdiv=document.getElementById("result");
 			newdiv.innerHTML = "x1 = "+res[0]+"</br>"+"x2 = "+res[1];
 			//document.body.appendChild(newdiv);
