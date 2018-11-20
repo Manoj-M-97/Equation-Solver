@@ -10,38 +10,30 @@
 	<script type="text/javascript" src="ocrad.js"></script>
 	<script src="parser.js"></script>
 	<script src="process.js"></script>
-	<!--<script type="text/javascript">
-		//import Tesseract from 'tesseract.js';
-		function recognize()
-		{
-			inpImage=document.getElementById("image").value;
-			Tesseract.recognize(inpImage).then(function(result)
-			{
-	    		console.log(result)
-			});
-
-		}
-	</script>-->
+	<link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-	<div>
-		<label><input type="text" size="1" id="ax1"/> x </label>
-		<label><input type="text" size="1" id="ax2"/> y </label>
-		<label> = <input type="text" size="1" id="ax3"/></label>
-		<p>
-		<label><input type="text" size="1" id="bx1"/> x </label>
-		<label><input type="text" size="1" id="bx2"/> y </label>
-		<label> = <input type="text" size="1" id="bx3"/></label>
-		<p>
-		<input type="button" value="solve" id="solve" name="solve" onclick="obj.solver()"/>
+    <h1 style="color:white" align="center">Equation Solver</h1>
+	<div class="container">
+        <div class="eqn">
+            <label><input type="text" size="1" id="ax1"/> x </label>
+            <label><input type="text" size="1" id="ax2"/> y </label>
+            <label> = <input type="text" size="1" id="ax3"/></label>
+            <p>
+            <label><input type="text" size="1" id="bx1"/> x </label>
+            <label><input type="text" size="1" id="bx2"/> y </label>
+            <label> = <input type="text" size="1" id="bx3"/></label>
+            <p>
+         </div>
+		<input type="button" value="Solve" id="solve" name="solve" onclick="obj.solver()"/>
 		<form id="form" action="" method="POST" name="form" enctype="multipart/form-data">	
 			<input type="file" id="file" name="file" accept="image/*">
 			<input type="button" value="Upload" id="submit" name="submit" onclick="upload()" onsubmit="check(this)">
 		</form>
 	</div>
 	<div id="result">
-		
+		Result of the above equation will come here.
 	</div>
 	<div id="plot">
 		
