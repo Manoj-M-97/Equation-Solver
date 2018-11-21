@@ -91,7 +91,7 @@
                 </div>
                 <!-- Example row of columns -->
                 <div class="row">
-                    <div class="wrapper"> 
+                    <div class="wrapper">
 
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="service-item text-center">
@@ -100,7 +100,7 @@
                                 <div class="separator2"></div>
                                 <p>Given the coefficients of two simultaneous equations, results can be got.</p>
                             </div>
-                        </div> 
+                        </div>
 
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="service-item text-center">
@@ -109,11 +109,20 @@
                                 <div class="separator2"></div>
                                 <p>Once an image which contains two equations is uploaded, it solves the equations and gives the results.</p>
                             </div>
-                        </div>  
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="service-item text-center">
+                                <i class="fa fa-lightbulb-o"></i>
+                                <h5>Plot Graph</h5>
+                                <div class="separator2"></div>
+                                <p>Plot Graph Of an Equation</p>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
-            </div> <!-- /container -->       
+            </div> <!-- /container -->
         </section>
 
 
@@ -132,7 +141,7 @@
                     <p>
                 </div>
                 <input type="button" value="Solve" id="solve" name="solve" onclick="obj.solver()"/>
-                <form id="form" action="" method="POST" name="form" enctype="multipart/form-data">  
+                <form id="form" action="" method="POST" name="form" enctype="multipart/form-data">
                     <input type="file" id="file" name="file" accept="image/*">
                     <input type="button" value="Upload" id="submit" name="submit" onclick="upload()" onsubmit="check(this)">
                 </form>
@@ -141,10 +150,10 @@
                 Result of the above equation will come here.
             </div>
             <div id="plot">
-                
+                <a href="http://localhost/ES/Equation-Solver-master/plot.html" class="btn btn-default">Plot Graph</a>
             </div>
 
-        </section><!-- End of portfolio-one Section --> 
+        </section><!-- End of portfolio-one Section -->
 
         <!-- Sections -->
         <section id="brand" class="brand sections">
@@ -232,7 +241,7 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- /container -->       
+            </div> <!-- /container -->
         </section>
 
         <!-- Sections -->
@@ -303,7 +312,7 @@
                     </div>
 
                 </div>
-            </div> <!-- /container -->       
+            </div> <!-- /container -->
         </section>
 
         <!-- Sections -->
@@ -377,7 +386,7 @@
                     </div>
 
                 </div>
-            </div> <!-- /container -->       
+            </div> <!-- /container -->
         </section>
 
 
@@ -426,6 +435,6 @@
         <script src="equationSolver.js"></script>
         <script type="text/javascript" src="ocrad.js"></script>
         <script src="parser.js"></script>
-        <script src="process.js"></script>        
+        <script src="process.js"></script>
     </body>
 </html>
