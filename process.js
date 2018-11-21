@@ -6,7 +6,6 @@ function upload()
 		if(xhr.readyState==4 && xhr.status==200)
 		{
 			path=xhr.responseText;
-			//alert("Entered:"+path);
 			convert(path);
 		}
 	};
@@ -25,11 +24,7 @@ function check(e)
 
 function convert(path)
 {
-	
-	//var image=document.getElementById("image");
-	//alert(image);
-	//image.crossOrigin = "Anonymous";
-	alert(path);
+	//alert(path);
 	var testImage = new Image();
 	testImage.src = path;
 	var stringResult="";
@@ -38,7 +33,7 @@ function convert(path)
         stringResult = OCRAD(testImage);
         output=stringResult.split("\n");
         
-        alert(output);
+        //alert(output);
 
 
 		send(output[0],output[1]);
